@@ -1,0 +1,20 @@
+from pydantic import BaseModel, Field
+
+class Product(BaseModel):
+    name: str = Field("")
+    brand: str = Field("")
+    product_number: str = Field("")
+    color: str = Field("")
+    image_url: str = Field("")
+    depth: str = Field("")
+    height: str = Field("")
+    width: str = Field("")
+    weight: str = Field("")
+    min_height: str = Field("")
+    max_height: str = Field("")
+    total_product_weight: str = Field("")
+    total_boxed_weight: str = Field("")
+    product_url: str = Field("")
+    rating_point: str = Field("")
+    rating_count: str = Field("")
+    others: str = Field("")

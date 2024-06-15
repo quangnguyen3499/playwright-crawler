@@ -1,0 +1,27 @@
+from pydantic import BaseModel, Field
+
+class NewProduct(BaseModel):
+    product_link: str = Field("")
+    product_name: str = Field("")
+    brand: str = Field("")
+    category: str = Field("")
+    regular_price: str = Field("")
+    discounted_price: str = Field("")
+    size: str = Field("")
+    color: str = Field("")
+    flavor: str = Field("")
+    weight: str = Field("")
+    description: str = Field("")
+    average_rating: str = Field("")
+    num_reviews: str = Field("")
+    image_link: str = Field("")
+    sku: str = Field("")
+    upc: str = Field("")
+    mfr_number: str = Field("")
+    stock_level: str = Field("")
+    sold_by_3rd_party: str = Field("")
+    shipped_by: str = Field("")
+    data_timestamp: str = Field("")
+    data_year_month: str = Field("")
+    retailer_code: str = Field("")
+
