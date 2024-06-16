@@ -1,9 +1,10 @@
 import os
-import streamlit as st
-import pandas as pd
+
 import matplotlib.pyplot as plt
-import seaborn as sns
+import pandas as pd
 import plotly.express as px
+import seaborn as sns
+import streamlit as st
 
 from models.product import Product
 
@@ -93,7 +94,6 @@ def get_website_crawler_options() -> list[str]:
     :rtype: list of str
     """
 
-    # return ["Staples CA", "Amazon CA", "Source Office Furniture", "Toysrus CA", "Uline", "Walmart CA"]
     return ["Staples CA"]
 
 
@@ -268,7 +268,9 @@ def main():
     st.sidebar.header("Input Options")
 
     input_option = st.sidebar.selectbox(
-        "Choose input method", ("Upload from CSV file", "Load from Crawled Folder", "Crawl from Link"), )
+        "Choose input method",
+        ("Upload from CSV file", "Load from Crawled Folder", "Crawl from Link"),
+    )
 
     st.markdown(
         f"""

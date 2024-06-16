@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 
+
 class NewProduct(BaseModel):
     product_link: str = Field("")
     product_name: str = Field("")
@@ -24,4 +25,3 @@ class NewProduct(BaseModel):
     data_timestamp: str = Field("")
     data_year_month: str = Field("")
     retailer_code: str = Field("")
-

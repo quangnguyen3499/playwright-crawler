@@ -1,9 +1,11 @@
-from dotenv import load_dotenv
-import urllib.parse
 import os
+import urllib.parse
+
+from dotenv import load_dotenv
 
 load_dotenv()
 API_KEY = os.getenv("PROXY_API_KEY")
+
 
 # Proxy
 def get_proxy_url(url):

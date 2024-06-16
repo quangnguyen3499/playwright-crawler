@@ -1,20 +1,41 @@
-# Crawler
+# Product Data Viewer
 
-### A collection of crawler modules written in Python using difference libraries:
+This is a Streamlit application to view and analyze product data. The app can either crawl product data from a provided link or upload product data from a CSV file, then display and visualize the data.
 
-1./ Selenium
+## Features
 
-2./ Scrapy
+- Crawl product data from various sources.
+- Upload product data via CSV file.
+- Display product data in a table.
+- Visualize product data with various charts.
+- Download crawled data as a CSV file.
 
-3./ Playwright
+## Installation
 
-4./ BeautifulSoup
+To run this application, you need to have Python installed. You can install the required packages using `pip`:
 
-## Steps
-### Example with playwright:
+```bash
+pip install -r requirements.txt
+```
 
-1./ docker-compsoe build
+## Running the Application
+You can run the application using the following command:
+```bash
+streamlit run streamlit_app.py
+```
 
-2./ docker-compose up streamlit
+### Configuration
+Streamlit configuration can be found in the .streamlit/config.toml file.
 
-Default streamlit running on: `localhost:8505`
+## Usage
+### 1. Crawl Data from Link:
+- Select "Crawl from Link" from the sidebar.
+- Enter the link to crawl and select the type of crawler.
+- Click "Crawl Data".
+- The crawled data will be displayed in a table and visualized with various charts.
+- You can download the crawled data as a CSV file.
+
+### 2.Upload CSV File:
+- Select "Upload CSV File" from the sidebar.
+- Choose a CSV file to upload.
+- The uploaded data will be displayed in a table and visualized with various charts.

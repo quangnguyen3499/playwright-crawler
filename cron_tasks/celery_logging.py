@@ -4,7 +4,6 @@ from logging.handlers import TimedRotatingFileHandler
 
 from celery.utils.log import get_task_logger
 
-
 logger = get_task_logger(__name__)
 log_handler = TimedRotatingFileHandler(
     f'logs/celery_sync_{datetime.now().strftime("%Y-%m-%d")}.log',
