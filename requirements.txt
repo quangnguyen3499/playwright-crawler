@@ -62,6 +62,7 @@ pyOpenSSL==24.1.0
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 pytz==2024.1
+pre-commit
 queuelib==1.7.0
 redis
 referencing==0.35.1
