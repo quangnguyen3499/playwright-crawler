@@ -30,7 +30,7 @@ def get_crawled_data(link, crawler_type, max_items):
     elif crawler_type == "Walmart CA":
         products = []
     elif crawler_type == "Staples CA":
-        from websites.staplesca import collect_data as collect_staplesca
+        from websites.non_proxy import collect_data as collect_staplesca
 
         products = collect_staplesca(page_url=link, max_items=max_items)
     else:

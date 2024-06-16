@@ -8,7 +8,7 @@ from datetime import datetime
 def crawl_staplesca_task():
     try:
         logging.info("----- Start crawling https://www.staples.ca -----")
-        from websites.staplesca import collect_data
+        from websites.non_proxy import collect_data
         collect_data()
     except Exception as e:
         error_msg = f"""

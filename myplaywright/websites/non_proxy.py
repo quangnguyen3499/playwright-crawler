@@ -9,6 +9,7 @@ import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from models.new_product import NewProduct
+from utils.converter import convert_parentheses_to_number
 
 load_dotenv()
 BASE_URL = "https://www.staples.ca"
@@ -50,7 +51,9 @@ def fetch_product_data(product_url, ua):
 
         try:
             rating_count_element = product_page.query_selector('.product-information__link__reviews')
+            print(f"Rating count element: {rating_count_element}")
             rating_count = rating_count_element.query_selector_all("span")[-1].text_content() if rating_count_element else "0"
+            print(f"Rating count: {rating_count}")
         except Exception as e:
             rating_count = "0"
 
@@ -74,7 +77,7 @@ def fetch_product_data(product_url, ua):
         product_data.weight = None
         product_data.description = product_page.query_selector(".product-details__content").text_content() if product_page.query_selector(".product-details__content") else None
         product_data.average_rating = rating_point
-        product_data.num_reviews = rating_count
+        product_data.num_reviews = convert_parentheses_to_number(rating_count)
         product_data.image_link = [item.get_attribute("src") for item in product_page.query_selector_all('.thumbnail-slider__thumb.thumbnail-slider__image')]
         product_data.sku = product_page.query_selector('.product-property').inner_text().split("Model")[0].replace("Item: ", "") if product_page.query_selector(".product-property") else None
         product_data.upc = None
